@@ -2,15 +2,18 @@
 	<thead>
 		<tr>
 			{{#each column in columns}}
-				<th>
+				<th {{action 'sortBy' column}}>
 					{{view Ember.View controller=parentController template=column.header.template}}
+					{{#if column.isSorted}}
+					  (sorted)
+					{{/if}}
 				</th>
 			{{/each}}
 		</tr>
 	</thead>
 
 	<tbody>
-		{{#each row in rows}}
+		{{#each row in sortedRows}}
 			<tr>
 				{{#each column in columns}}
 					{{view Ember.View tagName="td" controller=parentController template=column.cell.template}}				

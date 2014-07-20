@@ -5,6 +5,10 @@ export default Ember.Component.extend({
 
 	isColumn: true,
 
+	isSorted: function(){
+		return this === this.get('table.sortColumn');
+	}.property('table.sortColumn'),
+
 	_registerWithTable: function(){
 		var table = this.nearestWithProperty('isTable');
 		table.registerColumn(this);
