@@ -1,6 +1,14 @@
-# Ember-composable-components-example
+Ember-composable-components-example
+====================
 
-This README outlines the details of collaborating on this Ember application.
+# Step2: Get the proper context.
+
+If you just used whatever we've made so far in step1, you'll notice that it doesn't know anything about the current scope it's in. It's unable to see the actions on your controller inside of the header or cell templates. Likewise it doesn't know what other variables are in scope. This is because we didn't set the controller on the views we're using to the proper controller.
+
+We'll need to:
+
+1. Create a computed property on `my-table` that aliases `templateData.view.controller`.
+2. Assign that parent controller to our view with the `controller` attribute: `{{view Ember.View controller=parentController}}`.
 
 ## Installation
 
