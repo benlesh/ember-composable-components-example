@@ -1,0 +1,30 @@
+<h2 id='title'>Welcome to Ember.js</h2>
+
+{{#my-table rows=myData}}
+  {{#my-column}}
+    {{#my-column-header}}
+      Id
+    {{/my-column-header}}
+    {{#my-column-cell}}
+			{{row.id}}
+    {{/my-column-cell}}
+  {{/my-column}}
+
+  {{#my-column}}
+    {{#my-column-header}}
+      Name
+    {{/my-column-header}}
+    {{#my-column-cell}}
+			{{row.name}}
+    {{/my-column-cell}}
+  {{/my-column}}
+
+  {{#my-column}}
+    {{#my-column-header}}
+      Number
+    {{/my-column-header}}
+    {{#my-column-cell}}
+			{{row.number}}
+    {{/my-column-cell}}
+  {{/my-column}}
+{{/my-table}}

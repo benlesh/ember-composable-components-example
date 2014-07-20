@@ -1,0 +1,23 @@
+{{#if hasRendered}}
+	<thead>
+		<tr>
+			{{#each column in columns}}
+				<th>
+					{{view Ember.View template=column.header.template}}
+				</th>
+			{{/each}}
+		</tr>
+	</thead>
+
+	<tbody>
+		{{#each row in rows}}
+			<tr>
+				{{#each column in columns}}
+					{{view Ember.View tagName="td" template=column.cell.template}}				
+				{{/each}}
+			</tr>
+		{{/each}}
+	</tbody>
+{{/if}}
+
+{{yield}}

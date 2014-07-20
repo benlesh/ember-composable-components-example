@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EmberComposableComponentsExample</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/ember-composable-components-example.css">
+  </head>
+  <body>
+    <script>
+      window.EmberComposableComponentsExampleENV = {{ENV}};
+      window.EmberENV = window.EmberComposableComponentsExampleENV.EmberENV;
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/ember-composable-components-example.js"></script>
+    <script>
+      window.EmberComposableComponentsExample = require('ember-composable-components-example/app')['default'].create(EmberComposableComponentsExampleENV.APP);
+    </script>
+  </body>
+</html>
