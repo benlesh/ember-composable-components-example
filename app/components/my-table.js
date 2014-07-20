@@ -22,4 +22,6 @@ export default Ember.Component.extend({
 	_notifyRendered: function(){
 		this.set('hasRendered', true);
 	}.on('didInsertElement'),
+
+	parentController: Ember.computed.alias('templateData.view.controller'),
 });

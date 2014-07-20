@@ -24,7 +24,7 @@
       Number
     {{/my-column-header}}
     {{#my-column-cell}}
-			{{row.number}}
+			<a href="#" {{action 'incrementNumber' row}}>{{row.number}}</a>
     {{/my-column-cell}}
   {{/my-column}}
 {{/my-table}}

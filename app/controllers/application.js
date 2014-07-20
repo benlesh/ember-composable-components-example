@@ -13,7 +13,14 @@ export default Ember.ObjectController.extend({
 				number: Math.round((Math.random() * 200) - 100)
 			});
 		}
-		
+
 		return data;
-	}.property()
+	}.property(),
+
+	actions: {
+		incrementNumber: function(row) {
+			var current = Ember.get(row, 'number');
+			Ember.set(row, 'number', current + 1);
+		},
+	},
 });

@@ -3,7 +3,7 @@
 		<tr>
 			{{#each column in columns}}
 				<th>
-					{{view Ember.View template=column.header.template}}
+					{{view Ember.View controller=parentController template=column.header.template}}
 				</th>
 			{{/each}}
 		</tr>
@@ -13,7 +13,7 @@
 		{{#each row in rows}}
 			<tr>
 				{{#each column in columns}}
-					{{view Ember.View tagName="td" template=column.cell.template}}				
+					{{view Ember.View tagName="td" controller=parentController template=column.cell.template}}				
 				{{/each}}
 			</tr>
 		{{/each}}
