@@ -1,6 +1,17 @@
-# Ember-composable-components-example
+Ember-composable-components-example
+========
 
-This README outlines the details of collaborating on this Ember application.
+# Step 3: Adding sorting
+
+So now some shared functionality. I'm going to add a (very simplistic) sort.
+
+To add sorting we'll need to do a few things:
+
+1. Add a sortField attribute to the `my-column` component.
+2. Add a computed property of `sortedRows` to the `my-table` component.
+3. Add an action to the `my-table` component to trigger the sort when a column header is clicked.
+4. Add a property to the `my-column` component to display whether or not it's the sorted column.
+
 
 ## Installation
 
