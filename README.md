@@ -1,6 +1,21 @@
-# Ember-composable-components-example
+Ember-composable-components-example
+======================
 
-This README outlines the details of collaborating on this Ember application.
+# Use the branches
+
+The various steps in the process of creating these components are captured in different branches in this repository.
+
+# This is just an example
+
+This is a quick and dirty example based on other soon to be open sourced work, which at some point in the near future should be found here: http://github.com/netflix/ember-cli-ember-dvc
+
+The components this is based off of are much more feature rich and intended for reuse, where this is more intended as a demonstration or playground. You're free to use this code, but use it at your own risk.
+
+# Links to slides/etc for the talk
+
+... TBD ....
+
+
 
 ## Installation
 
