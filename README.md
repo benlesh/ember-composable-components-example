@@ -1,20 +1,15 @@
 Ember-composable-components-example
 ======================
 
-# Use the branches
+# Step 4: Dynamically observing sort changes
 
-The various steps in the process of creating these components are captured in different branches in this repository.
+This is a bit more advanced, and unrelated to the idea of "composable components". If we want the sorted
+rows to update when we update the individual sorted fields on data items in the array, we'll need to do some Ember magic to 
+dynamically set up observers to watch the sorted property for changes.
 
-# This is just an example
-
-This is a quick and dirty example based on other soon to be open sourced work, which at some point in the near future should be found here: http://github.com/netflix/ember-cli-ember-dvc
-
-The components this is based off of are much more feature rich and intended for reuse, where this is more intended as a demonstration or playground. You're free to use this code, but use it at your own risk.
-
-# Links to slides/etc for the talk
-
-... TBD ....
-
+1. Change the `sortedRows` property to a simple function that sets `sortedRows`.
+2. Create an `observes` that watches changes to the sorted field and sets up new observers pointing at our function.
+3. Create an `observesBefore` that tears down old observers.
 
 
 ## Installation
