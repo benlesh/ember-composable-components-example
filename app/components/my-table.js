@@ -7,11 +7,13 @@ export default Ember.Component.extend({
 
   hasRendered: false,
 
+  sortColumn: null,
+
   columns: function(){
   	return [];
   }.property(),
 
-  sortedRows: function() {
+  _updateSortRows: function() {
   	var rows = this.get('rows');
   	var sortField = this.get('sortColumn.sortField');
 
@@ -21,11 +23,25 @@ export default Ember.Component.extend({
   		var bx = b[sortField];
   		return (ax === bx) ? 0 : (ax > bx ? 1 : -1);
   	});
-  	return copy;
-  }.property('rows.@each', 'sortColumn.sortField'),
+  	this.set('sortedRows', copy);
+  },
+
+  _sortFieldChanging: function(){
+  	var sortField = this.get('sortColumn.sortField');
+  	Ember.removeObserver(this, 'rows.@each.' + sortField, this._updateSortRows);
+  }.observesBefore('sortColumn.sortField'),
+
+  _sortFieldChanged: function(){
+  	var sortField = this.get('sortColumn.sortField');
+  	this._updateSortRows();
+	  Ember.addObserver(this, 'rows.@each.' + sortField, this._updateSortRows);
+  }.observes('sortColumn.sortField'),
 
 	registerColumn: function(column) {
 		this.get('columns').pushObject(column);
+		if(!this.get('sortColumn')) {
+			this.set('sortColumn', column);
+		}
 	},
 
 	unregisterColumn: function(column) {
