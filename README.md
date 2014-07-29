@@ -13,7 +13,9 @@ The components this is based off of are much more feature rich and intended for 
 
 # Links to slides/etc for the talk
 
-... TBD ....
+https://speakerdeck.com/blesh/emberjs-designing-composable-components
+
+Ember-SF Meetup: http://www.meetup.com/Ember-SF/events/184385342/
 
 
 
